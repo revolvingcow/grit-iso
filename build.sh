@@ -1,22 +1,31 @@
+if [[ ${EUID} -ne 0 ]]; then
+	echo "This script must be run as root"
+	exit 1
+fi
+
 # ---------------------------
 # Build Custom Repository
 # ---------------------------
 
-./customrepo/build.sh
+cd customrepo && ./build.sh && cd ..
 
 # ---------------------------
 # Build ISO
 # ---------------------------
 
+cd releng
+
 # Clean up
-rm -rf ./releng/work/*
-rm -rf ./releng/out
+sudo rm -rf ./work/*
+sudo rm -rf ./out
 
 # Change root ownership
-chown -R root:root ./releng/root-image
+sudo chown -R root:root root-image
 
 # Call the original build script
-./releng/build.sh -v
+sudo ./build.sh -v
 
 # Change ownership back
-chown -R bryan:users releng/root-image
+sudo chown -R bryan:users root-image
+
+cd ..

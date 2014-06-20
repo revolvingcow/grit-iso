@@ -1,5 +1,6 @@
-customrepo/i686/*.pkg.tar.xz
-customrepo/x86_64/*.pkg.tar.xz
+customrepo/i686/*
+customrepo/x86_64/*
 customrepo/packages/*
 releng/work
 releng/out
+releng/root-image/etc/skel/.vim/bundles/*
