@@ -1,0 +1,4 @@
+customrepo/i686/*.pkg.tar.xz
+customrepo/x86_64/*.pkg.tar.xz
+customrepo/packages/*
+
