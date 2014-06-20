@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# XCompMgr
+xcompmgr
+
+# Set startup volume
+amixer -D pulse set Master unmute
+amixer -D pulse set Master 80% 
+
+# Disable beeps
+#xset -b &
+
+# Set brightness
+xbacklight -set 80 &
+
+# Clipboard manager
+#LC_ALL=C parcellite &
+
+# On Screen Display
+dunst &

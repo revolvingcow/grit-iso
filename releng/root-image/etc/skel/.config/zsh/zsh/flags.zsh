@@ -1,0 +1,3 @@
+setopt HIST_IGNORE_DUPS
+setopt prompt_subst
+setopt completealiases

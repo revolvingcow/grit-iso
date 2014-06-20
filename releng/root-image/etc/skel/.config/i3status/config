@@ -1,0 +1,83 @@
+general {
+	colors = true
+    color_good = "#00b1d7"
+    color_bad = "#c92601"
+    color_degraded = "#7e7371"
+	interval = 5
+}
+
+#order += "ipv6"
+order += "disk /"
+order += "disk /home"
+#order += "run_watch DHCP"
+#order += "run_watch VPN"
+order += "wireless wlp2s0"
+order += "ethernet eno1"
+order += "volume master"
+#order += "battery 1"
+order += "cpu_temperature 0"
+order += "load"
+order += "tztime local"
+
+wireless wlp1s0 {
+	format_up = " W: (%quality at %essid, %bitrate) %ip "
+	format_down = " W: down "
+}
+
+wireless wlp2s0 {
+	format_up = " W: (%quality at %essid, %bitrate) %ip "
+	format_down = " W: down "
+}
+
+ethernet eth0 {
+	format_up = " E: %ip (%speed) "
+	format_down = " E: down "
+}
+
+ethernet eno1 {
+    format_up = " E: %ip (%speed) "
+    format_down = " E: down "
+}
+
+battery 1 {
+	format = " %status %percentage %remaining "
+	path = "/sys/class/power_supply/BAT%d/uevent"
+	low_threshold = 10
+}
+
+run_watch DHCP {
+	pidfile = "/var/run/dhclient*.pid"
+}
+
+run_watch VPN {
+	#pidfile = "/var/run/vpnc/pid"
+    pidfile = "/var/run/openvpn/*.pid"
+}
+
+tztime local {
+	format = " %Y-%m-%d %H:%M:%S "
+}
+
+load {
+	format = " %5min "
+}
+
+cpu_temperature 0 {
+	format = " T: %degrees C "
+	path = "/sys/devices/platform/coretemp.0/temp1_input"
+}
+
+disk "/" {
+	format = " %free "
+}
+
+disk "/home" {
+	format = " %free "
+}
+
+volume master {
+	format = " V: %volume "
+	device = "default"
+	mixer = "Master"
+	mixer_idx = 0
+}

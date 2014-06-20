@@ -1,0 +1,11 @@
+#!/bin/sh
+wifi="/sys/devices/platform/samsung/rfkill/rfkill1/state"
+state=$(cat $wifi)
+
+if [[ $state -eq 1 ]]; then
+    state=0
+else
+    state=1
+fi
+
+echo $state > $wifi

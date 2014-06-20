@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Check for any virtual machines running and save them.
+for uuid in $( VBoxManage list runningvms | awk 'BEGIN{FS="\" "}{print $2}' )
+do
+	VBoxManage controlvm $uuid savestate
+done

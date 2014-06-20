@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# Check for any virtual machines running and save them.
+if ! type "vboxmanage" > /dev/null; then
+    for uuid in $( vboxmanage list runningvms | awk 'BEGIN{FS="\" "}{print $2}' )
+    do
+    	vboxmanage controlvm $uuid savestate
+    done
+fi
+
+# Kill all open applications
+i3-msg [class="."] kill
+
+# Pause to allow applications to save any necessary information
+# If they can't do it in 10 seconds their screwed.
+sleep 1
+
+## Now exit i3wm
+#i3-msg exit

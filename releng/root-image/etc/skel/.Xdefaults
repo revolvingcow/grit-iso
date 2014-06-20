@@ -1,0 +1,37 @@
+URxvt*font: xft:Inconsolata:pixelsize=10:antialias=true:hinting=true, \
+            xft:Inconsolata for Powerline:pixelsize=10:antialias=true:hinting=true,\
+            xft:PowerlineSymbols:pixelsize=10:antialias=true:hinting=true
+URxvt*termName: rxvt-256color
+URxvt*background: #000000
+URxvt*foreground: #cccccc
+URxvt*scrollBar: false
+URxvt*perl-lib: /usr/lib/urxvt/perl
+URxvt*perl-ext-common: default,matcher
+URxvt*urlLauncher: /usr/bin/chromium
+URxvt*matcher.button: 1
+
+Xft*dpi: 96
+Xft*antialias: true
+Xft*hinting: full
+
+URxvt.perl-ext-common: matcher
+URxvt.urlLauncher: chromium
+URxvt.matcher.button: 1
+URxvt.transparent: true
+URxvt.tintColor: white
+URxvt.shading: 40
+URxvt*color0: #000000
+URxvt*color1: #9e1828
+URxvt*color3: #aece92
+URxvt*color4: #968a38
+URxvt*color5: #414171
+URxvt*color6: #963c59
+URxvt*color7: #bebebe
+URxvt*color8: #666666
+URxvt*color9: #cf6171
+URxvt*color10: #c5f779
+URxvt*color11: #fff796
+URxvt*color12: #4186be
+URxvt*color13: #cf9ebe
+URxvt*color14: #71bebe
+URxvt*color15: #ffffff

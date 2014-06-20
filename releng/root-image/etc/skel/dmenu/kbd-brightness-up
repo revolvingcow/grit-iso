@@ -1,0 +1,10 @@
+#!/bin/sh
+brightness="/sys/devices/platform/samsung/leds/samsung::kbd_backlight/brightness"
+level=$(cat $brightness)
+max=$(cat /sys/devices/platform/samsung/leds/samsung::kbd_backlight/max_brightness)
+
+if [[ $level -lt $max ]]; then
+    level=`expr $level + 1`
+fi
+
+echo $level > $brightness
