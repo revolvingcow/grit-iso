@@ -12,7 +12,7 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
 fi
 
 # Create a background
-feh --bg-scale '/home/bryan/pictures/background'
+feh --bg-scale '/usr/share/pixmaps/grit-p12.png'
 
 # Update i3status network devices
 i3status-update-network

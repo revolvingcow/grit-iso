@@ -13,16 +13,16 @@
 set $mod Mod4
 
 # tags for our workspaces
-set $tag1 "1: www"
-set $tag2 "2: mail"
-set $tag3 "3: comm"
+set $tag1 "1: intro"
+set $tag2 "2"
+set $tag3 "3"
 set $tag4 "4"
 set $tag5 "5"
 set $tag6 "6"
 set $tag7 "7"
 set $tag8 "8"
 set $tag9 "9"
-set $tag10 "10: dev"
+set $tag10 "10"
 
 # colors
 set $black #000000
@@ -227,4 +227,4 @@ exec ~/.config/i3/autostart
 
 # autostart
 exec --no-startup-id xcompmgr
-exec --no-startup-id i3-msg 'workspace "1: www";'
+exec --no-startup-id i3-msg 'workspace "1: intro";'
